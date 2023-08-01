@@ -73,10 +73,18 @@ const login = async (req, res) => {
         _id: user._id,
         profileImage: user.profileImage,
         token: generateToken(user._id),
-    })
+    });
+};
+
+//Get current logged in user
+const getCurrentUser = async(req, res) => {
+  const user = req.user;
+
+  res.status(200).json(user);
 }
 
 module.exports = {
   register,
   login,
+  getCurrentUser,
 };
