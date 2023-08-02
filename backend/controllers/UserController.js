@@ -81,10 +81,16 @@ const getCurrentUser = async(req, res) => {
   const user = req.user;
 
   res.status(200).json(user);
-}
+};
+
+// Update on user
+const update = async(req, res) => {
+  res.send("Update");
+};
 
 module.exports = {
   register,
   login,
   getCurrentUser,
+  update,
 };
